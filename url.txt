@@ -1,0 +1,1 @@
+link dashboard: https://app-dashboard-bike-by-g.streamlit.app/
