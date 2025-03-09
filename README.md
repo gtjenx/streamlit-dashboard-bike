@@ -9,10 +9,7 @@ pip install -r requirements.txt
 
 ## Setup Environment - Shell/Terminal
 ```
-mkdir proyek_analisis_data
-cd proyek_analisis_data
-pipenv install
-pipenv shell
+cd "C:\Users\ASUS\Downloads\Submission"  # Ganti path sesuai lokasi folder proyekmu
 pip install -r requirements.txt
 ```
 
