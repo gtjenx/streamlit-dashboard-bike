@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -7,8 +8,12 @@ from datetime import datetime
 sns.set(style='whitegrid')
 
 # Load data
-day_data = pd.read_csv("day_data.csv") 
-hour_data = pd.read_csv("hour_data.csv")
+# Gunakan path absolut
+file_path = os.path.join(os.path.dirname(__file__), "day_data.csv")
+day_data = pd.read_csv(file_path)
+
+file_path = os.path.join(os.path.dirname(__file__), "hour_data.csv")
+hour_data = pd.read_csv(file_path)
 
 # Convert date columns
 day_data['dteday'] = pd.to_datetime(day_data['dteday'])
