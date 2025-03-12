@@ -71,8 +71,9 @@ season_mapping = {1: 'Musim Semi', 2: 'Musim Panas', 3: 'Musim Gugur', 4: 'Musim
 filtered_day_data['season_label'] = filtered_day_data['season'].map(season_mapping)
 season_trend = filtered_day_data.groupby('season_label')['cnt'].sum().reset_index()
 
-colors = ['#F4A3C2' if s == season_trend.iloc[0]['season_label'] else '#D3D3D3' for s in season_trend['season_label']]
-explode = [0.1 if s == season_trend.iloc[0]['season_label'] else 0 for s in season_trend['season_label']]
+max_season = season_trend.loc[season_trend['cnt'].idxmax(), 'season_label']
+colors = ['#F4A3C2' if s == max_season else '#D3D3D3' for s in season_trend['season_label']]
+explode = [0.1 if s == max_season else 0 for s in season_trend['season_label']]
 
 fig, ax = plt.subplots(figsize=(8, 8))
 ax.pie(season_trend['cnt'], labels=season_trend['season_label'], autopct="%1.1f%%", colors=colors, startangle=140, explode=explode)
