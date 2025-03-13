@@ -90,6 +90,7 @@ ax.set_xlabel("Kondisi Cuaca", fontsize=12)
 ax.set_ylabel("Jumlah Penyewaan", fontsize=12)
 ax.set_xticklabels(ax.get_xticklabels(), rotation=0)
 ax.legend(["Casual", "Registered"])
+ax.grid(False) 
 for container in ax.containers:
     ax.bar_label(container, fmt="%.0f", label_type="edge", fontsize=10, padding=3)
 st.pyplot(fig)
